@@ -112,6 +112,8 @@ running of spike commands
 
 running of signed and unsigned numbers
 ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/4b6d7c4f-c309-4808-b61c-c0621c3e0a6f)
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/419d8786-6524-4b00-a5d1-b8085f88e898)
+
 
 
 
