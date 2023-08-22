@@ -13,6 +13,8 @@ We wrote a C program for calculating the sum from 1 to n using a text editor, le
 ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/f1b66028-3d31-4f26-ae4f-1d48e21d577f)
 #include<stdio.h>
 
+
+
 int main(){
 	int i, sum=0, n=111;
 	for (i=1;i<=n; ++i) {
@@ -21,6 +23,8 @@ int main(){
 	printf("Sum of numbers from 1 to %d is %d \n",n,sum);
 	return 0;
 }
+
+
 
 running of spike commands
 
