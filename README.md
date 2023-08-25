@@ -48,6 +48,10 @@ LAB 2 :
 ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/2652903b-9823-4c1e-a7eb-f98d9e4e3bcf)
 
 
+![Screenshot from 2023-08-24 16-40-01](https://github.com/ughdeiek/pes_asic_class/assets/142580251/09dd2783-b011-406c-979b-af2fc3156aaf)
+
+
+
 END.
 
 
