@@ -169,10 +169,6 @@ LAB 2 :
 ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/2652903b-9823-4c1e-a7eb-f98d9e4e3bcf)
 
 
-![Screenshot from 2023-08-24 16-40-01](https://github.com/ughdeiek/pes_asic_class/assets/142580251/09dd2783-b011-406c-979b-af2fc3156aaf)
-
-
-
 
 
 
@@ -278,18 +274,18 @@ Yosys good_mux:
 
 
     
-    2. ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/6a9d2770-e422-41cf-9f63-4f69347af2d3)
+    2.  ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/6a9d2770-e422-41cf-9f63-4f69347af2d3)
 
 
-    3.![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/392951b8-7a60-43ed-9a83-e404983db903)
+    3. ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/392951b8-7a60-43ed-9a83-e404983db903)
 
-    4.![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/96f41a97-d35b-4989-add8-501a136bee3f)
+    4. ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/96f41a97-d35b-4989-add8-501a136bee3f)
 
-    5.![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/7ce7f26a-f62b-461e-a8a8-11b8e9bb7a1a)
+    5. ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/7ce7f26a-f62b-461e-a8a8-11b8e9bb7a1a)
 
-    6.![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/69e955e4-e2f8-4709-9aca-c0df98aed19b)
+    6. ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/69e955e4-e2f8-4709-9aca-c0df98aed19b)
 
-    7.![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/693434fb-d69c-474a-a5be-53b02aad7273)
+    7. ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/693434fb-d69c-474a-a5be-53b02aad7273)
 
 
 iii) netlist creation:
