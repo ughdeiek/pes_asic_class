@@ -241,10 +241,28 @@ LAB - 3:
 
 Commands used to perform different opertions:
 
-    read_verilog to read the design
-    read_liberty to read the .lib file
-    write_verilog to write out the netlist file
-    show to open the netlist viewer.
+ 
+   1.read_verilog to read the design
+   2.read_liberty to read the .lib file
+   3.write_verilog to write out the netlist file
+   4.show to open the netlist viewer.
+   5.To read the library
+   6.read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+   7.To read the design
+   8.read_verilog good_mux.v
+   9.To syntheis the module
+   10.synth -top good_mux
+   11.to generate the netlist
+   12.abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+   13.To write the netlist
+   14.write_verilog good_mux_netlist.v
+   15.!gvim good_mux_netlist.v
+   16.To view a simplified code
+   17.write_verilog -noattr good_mux_netlist.v
+   18.!gvim good_mux_netlist.v
+
+
+
 
 i) yosys package:
 
@@ -255,6 +273,11 @@ i) yosys package:
 1. ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/c30aa54a-cd02-4240-ad10-a9b839f92913)
 
 2. ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/565a7534-ccfe-452e-9de3-826f67e0e5b9)
+
+
+3.
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/20e8526b-358f-4ca0-866d-8a5c0ebb0024)
+
 
 
 
@@ -284,7 +307,18 @@ iii) netlist creation:
 
 
 
-iv) after switching the extra info is dumped out hence we obtain:
+
+iv) installing vim:
+
+
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/ae3b13ce-762b-4cc4-aaa3-327e021a374e)
+
+
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/be736300-6ab1-429e-b5f9-81a004de718b)
+
+
+
+v) after switching the extra info is dumped out hence we obtain:
 
 ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/95daa6fd-8855-4699-ae7d-d884c878a3c6)
 
