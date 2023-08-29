@@ -266,28 +266,14 @@ ii) for a 2:1 mux:
 
 Yosys good_mux:
 
+1) ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/4b800495-0a82-40c9-b443-e15f4d2c053a)
+
+2) ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/0d5777eb-8529-49e5-9861-786ba27052c0)
 
 
     
     
-    1. ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/4e5851eb-5918-4d64-8a92-67c7abfe75fd
-
-
     
-    2.  ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/6a9d2770-e422-41cf-9f63-4f69347af2d3)
-
-
-    3. ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/392951b8-7a60-43ed-9a83-e404983db903)
-
-    4. ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/96f41a97-d35b-4989-add8-501a136bee3f)
-
-    5. ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/7ce7f26a-f62b-461e-a8a8-11b8e9bb7a1a)
-
-    6. ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/69e955e4-e2f8-4709-9aca-c0df98aed19b)
-
-    7. ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/693434fb-d69c-474a-a5be-53b02aad7273)
-
-
 iii) netlist creation:
 
 ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/7e476f7c-d334-41d8-ad19-2c7940c0960f)
