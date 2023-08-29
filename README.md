@@ -270,12 +270,13 @@ i) yosys package:
         cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
         Type yosys
 
-1. ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/c30aa54a-cd02-4240-ad10-a9b839f92913)
-
-2. ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/565a7534-ccfe-452e-9de3-826f67e0e5b9)
 
 
-3.
+1.
+    ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/565a7534-ccfe-452e-9de3-826f67e0e5b9)
+
+
+2.
 ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/20e8526b-358f-4ca0-866d-8a5c0ebb0024)
 
 
