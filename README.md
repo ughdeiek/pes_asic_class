@@ -319,7 +319,7 @@ iv) installing vim:
 
 
 
-v) after switching the extra info is dumped out hence we obtain:
+v) after switching, the extra info is dumped out hence we obtain:
 
 ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/95daa6fd-8855-4699-ae7d-d884c878a3c6)
 
