@@ -268,7 +268,9 @@ Yosys good_mux:
 
 1) ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/4b800495-0a82-40c9-b443-e15f4d2c053a)
 
-2) ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/0d5777eb-8529-49e5-9861-786ba27052c0)
+
+
+3) ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/0d5777eb-8529-49e5-9861-786ba27052c0)
 
 
     
