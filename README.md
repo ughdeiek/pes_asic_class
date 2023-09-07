@@ -325,6 +325,8 @@ v) after switching, the extra info is dumped out hence we obtain:
 
 
 
+DAY -4:
+
 LAB -4 :
 
 Introduction to Timing Dot Libs:
@@ -490,28 +492,31 @@ Some more optimizations:
 
     gvim mult_2.v
 
-image
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/0662241d-070a-4ea4-8afb-1524c262b02b)
+
 
     read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
     read_verilog mult_2.v
     synth -top mul2
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/ed863a9f-bb38-4081-8944-e6248c61c147)
 
-image
 
     abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
     show
 
-image
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/8a9773e2-27cb-418d-8783-70ed43d4938f)
+
 
     write_verilog -noattr mul2_netlist.v
     !gvim mul2_netlist.v
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/36e54291-f70a-43b3-a9be-6e907fca1f1d)
 
-image
 
 
 
     gvim mult_8.v
-    image
+    
+    ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/30feffe5-25c6-4647-a1be-b176d29a1299)
 
     read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
 
@@ -519,18 +524,29 @@ image
 
     synth -top mult8
 
-image
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/fa90dbbc-b8c1-4808-9350-5b9023221f4b)
+
 
     abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
     show
 
-image
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/66f491c6-115d-461b-aeff-b20e820942a7)
+
 
 
     write_verilog -noattr mult8_netlist.v
     !gvim mult8_netlist.v
 
-image
+    ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/65c71706-8f0a-44a3-8ad7-899d3fa97906)
+
+
+
+
+    DAY -5 
+
+    LAB-5:
+    
+
 
 
 
