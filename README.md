@@ -840,10 +840,16 @@ show
 
 DAY-6:
 
+
+
 LAB-6:
 
 
+
+
+
 GLS Synthesis-Simulation Mismatch and Blocking Non-blocking Statemets:
+
 
 Gate Level Simualtion
 Gate-level simulation is a technique used in digital design and verification to validate the functionality of a digital circuit at the gate-level implementation.
@@ -858,6 +864,8 @@ Synthesis-Simulation Mismatch
 A synthesis-simulation mismatch refers to a situation in digital design where the behavior of a circuit, as observed during simulation, doesn't match the expected or desired behavior of the circuit after it has been synthesized.
 This discrepancy can occur due to various reasons, such as timing issues, optimization conflicts, and differences in modeling between the simulation and synthesis tools.
 This mismatch is a critical concern in digital design because it indicates that the actual hardware implementation might not perform as expected, potentially leading to functional or timing failures in the fabricated chip.
+
+
 
 
 
@@ -886,14 +894,29 @@ ternary_operator_mux
 
 gvim teranry_operator_mux.v
 
+
+
+
 Simulation
 
 iverilog ternary_operator_mux.v tb_ternary_operator_mux.v
 ./a.out
 gtkwave tb_ternary_operator_mux.vcd
 
+![Screenshot from 2023-09-07 21-57-45](https://github.com/ughdeiek/pes_asic_class/assets/142580251/b6f45d25-f3ba-41ea-87c2-e3ff33de8e67)
+
+![Screenshot from 2023-09-07 21-59-40](https://github.com/ughdeiek/pes_asic_class/assets/142580251/6703bd3d-7145-4585-8a53-a88ecc274677)
+
+![Screenshot from 2023-09-07 22-02-35](https://github.com/ughdeiek/pes_asic_class/assets/142580251/bb2a7e8f-daa0-4bb0-b3f1-315f8617c2c5)
+
+![Screenshot from 2023-09-07 22-03-03](https://github.com/ughdeiek/pes_asic_class/assets/142580251/2c368198-adea-4c6c-8985-aae12c815b07)
+
+
+
+
 
 Synthesis
+
 
 read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 read_verilog ternary_operator_mux.v
@@ -912,12 +935,24 @@ show
 
 GLS to Gate-Level Simulation
 
+
+
 iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux_net.v tb_ternary_operator_mux.v
 ./a.out
+
+
 gtkwave tb_bad_mux.vcd
+
+![Screenshot from 2023-09-07 22-36-43](https://github.com/ughdeiek/pes_asic_class/assets/142580251/0861dd40-e203-4e43-aedc-2bcff2b5ce9e)
+
+![Screenshot from 2023-09-07 22-40-07](https://github.com/ughdeiek/pes_asic_class/assets/142580251/ca8b8c07-e305-44fa-b6a7-92cf4321a74f)
+
+
 
 
 gvim bad_mux.v
+
+
 
 
 
@@ -927,8 +962,13 @@ iverilog bad_mux.v tb_bad_mux.v
 ./a.out
 gtkwave tb_bad_mux.vcd
 
+![Screenshot from 2023-09-07 22-24-19](https://github.com/ughdeiek/pes_asic_class/assets/142580251/310348a1-6e17-4640-97a0-1d8a27fb1b21)
+
+
+
 
 Synthesis
+
 
 read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 read_verilog bad_mux.v
@@ -941,11 +981,22 @@ show
 
 ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/7d7a9304-180e-408c-b2f5-efedf2a1839e)
 
+
+
+
+
 GLS to Gate-Level Simulation
+
+
 
 iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v bad_mux_net.v tb_bad_mux.v
 ./a.out
 gtkwave tb_bad_mux.vcd
+
+![Screenshot from 2023-09-07 22-24-19](https://github.com/ughdeiek/pes_asic_class/assets/142580251/e7443f13-4d21-48b1-90f4-86100343cab7)
+
+![Screenshot from 2023-09-07 22-24-10](https://github.com/ughdeiek/pes_asic_class/assets/142580251/293d7116-b56d-41b4-85f4-ac56767d8719)
+
 
 
 
@@ -963,8 +1014,18 @@ iverilog blocking_caveat.v tb_blocking_caveat.v
 ./a.out
 gtkwave tb_blocking_caveat.vcd
 
+![Screenshot from 2023-09-07 22-24-19](https://github.com/ughdeiek/pes_asic_class/assets/142580251/4898de89-672c-4b8b-b5e3-c843eabb5f1c)
+
+![Screenshot from 2023-09-07 22-27-35](https://github.com/ughdeiek/pes_asic_class/assets/142580251/8043d138-2239-4254-8307-a8ce2126ef93)
+
+![Screenshot from 2023-09-07 22-29-26](https://github.com/ughdeiek/pes_asic_class/assets/142580251/4f60014a-dc73-473d-8e03-72058ceed222)
+
+
+
 
 Synthesis
+
+
 
 read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 read_verilog blocking_caveat.v
@@ -972,6 +1033,9 @@ synth -top blocking_caveat
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 
+![Screenshot from 2023-09-07 22-29-26](https://github.com/ughdeiek/pes_asic_class/assets/142580251/bdf2b8d3-d459-491f-b545-e6b242bdb2a9)
+
+![Screenshot from 2023-09-07 22-33-20](https://github.com/ughdeiek/pes_asic_class/assets/142580251/4225b8d7-11c1-4274-872d-4feffd15881e)
 
 
 
@@ -979,10 +1043,17 @@ GLS to Gate-Level Simulation
 
 
 
+
+
 iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v blocking_caveat_net.v tb_blocking_caveat.v
 ./a.out
 gtkwave tb_blocking_caveat.vcd
 
+![Screenshot from 2023-09-07 22-36-11](https://github.com/ughdeiek/pes_asic_class/assets/142580251/8c6e43de-c081-49b3-b135-e9b2a053d215)
+
+![Screenshot from 2023-09-07 22-36-11](https://github.com/ughdeiek/pes_asic_class/assets/142580251/3d835ce5-d881-4686-85e0-0cc57cf62613)
+
+![Screenshot from 2023-09-07 22-36-43](https://github.com/ughdeiek/pes_asic_class/assets/142580251/e13bf8da-918d-492b-ba17-58e27bfb39c0)
 
  
 
