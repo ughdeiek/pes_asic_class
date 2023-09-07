@@ -649,9 +649,349 @@ show
     ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/e0c6edb5-6a37-485f-9eeb-5bb49336dca4)
 
 
-    Sequential Logic Optimisations:
-
+ 
     
+    
+ Sequential Logic Optimisations:
+
+
+
+
+
+dff_const1
+gvim dff_const1.v
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/34486ba8-0c89-4e30-a424-1aefd062e620)
+
+Simulation
+
+iverilog dff_const1.v tb_dff_const1.v
+/a.out
+gtkwave tb_dff_const1.vcd
+
+
+Synthesis
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const1.v
+synth -top dff_const1
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/ed864f03-f141-4f9f-bd31-9e726f1faaa5)
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/c6490d7a-9398-4f73-922f-0bb9cd557474)
+
+
+
+
+
+
+ 
+dff_const2
+gvim dff_const2.v
+
+Simulation
+
+iverilog dff_const2.v tb_dff_const2.v
+/a.out
+gtkwave tb_dff_const2.vcd
+Screenshot from 2023-08-29 07-47-58
+
+Synthesis
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const2.v
+synth -top dff_const2
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/ffe58a8a-f1a1-4ea0-938e-d4e49628bf2e)
+
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/74a8ac0c-cdff-4abf-b825-ba677cc075f2)
+
+
+
+
+
+
+
+
+gvim dff_const3.v
+
+Simulation
+
+iverilog dff_const3.v tb_dff_const3.v
+/a.out
+gtkwave tb_dff_const3.vcd
+
+Synthesis
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const3.v
+synth -top dff_const3
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/1bdb06f1-d3c7-4153-bda1-219e63d55619)
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/07b9120f-495b-4c3d-a8ae-f0d0844d7fdf)
+
+
+
+
+
+
+
+
+dff_const4
+
+gvim dff_const4.v
+
+Simulation
+
+iverilog dff_const4.v tb_dff_const4.v
+/a.out
+gtkwave tb_dff_const4.vcd
+
+
+Synthesis
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const4.v
+synth -top dff_const4
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/1d540bed-3f42-4790-8906-712c09a1fbc1)
+
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/78926be7-efe4-4115-bb0c-1dfae1c9b7f1)
+
+
+
+
+
+
+
+dff_const5
+gvim dff_const5.v
+
+Simulation
+
+iverilog dff_const4.v tb_dff_const4.v
+/a.out
+gtkwave tb_dff_const5.vcd
+
+
+Synthesis
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const4.v
+synth -top dff_const4
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/c6866b5c-ea52-4c49-b657-f19e3d41f381)
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/46df7dee-1eeb-4123-b195-131bdc43b617)
+
+
+
+
+
+
+
+
+Sequential Optimisations for Unused Outputs:
+
+
+
+
+counter_opt1
+gvim counter_opt.v
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog counter_opt.v
+synth -top counter_opt
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/c6b2fc6a-09f3-4e17-8363-0d1f04abcfc0)
+
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/3c92f4ba-f128-42bf-911d-ef8da89fc95e)
+
+
+
+
+
+
+
+
+
+counter_opt2
+gvim counter_opt2.v
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog counter_opt2.v
+synth -top counter_opt2
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/b5c28e3f-99a8-49d8-8ce8-8412989db8ed)
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/00520f89-e200-4fe7-b014-6adae6430cc9)
+
+
+DAY-6:
+
+LAB-6:
+
+
+GLS Synthesis-Simulation Mismatch and Blocking Non-blocking Statemets:
+
+Gate Level Simualtion
+Gate-level simulation is a technique used in digital design and verification to validate the functionality of a digital circuit at the gate-level implementation.
+It involves simulating the circuit using the actual logic gates and flip-flops that make up the design, as opposed to higher-level abstractions like RTL (Register Transfer Level) descriptions.
+This type of simulation is typically performed after the logic synthesis process, where a high-level description of the design is transformed into a netlist of gates and flip-flops.
+
+
+
+
+Synthesis-Simulation Mismatch
+
+A synthesis-simulation mismatch refers to a situation in digital design where the behavior of a circuit, as observed during simulation, doesn't match the expected or desired behavior of the circuit after it has been synthesized.
+This discrepancy can occur due to various reasons, such as timing issues, optimization conflicts, and differences in modeling between the simulation and synthesis tools.
+This mismatch is a critical concern in digital design because it indicates that the actual hardware implementation might not perform as expected, potentially leading to functional or timing failures in the fabricated chip.
+
+
+
+Blocking Statements
+
+Blocking statements are executed sequentially in the order they appear in the code and have an immediate effect on signal assignments.
+
+Non-Blocking Statements
+
+Non-blocking assignments are used to model concurrent signal updates, where all assignments are evaluated simultaneously and then scheduled to be updated at the end of the time step.
+
+Caveats with Blocking Statements
+
+Blocking statements in hardware description languages like Verilog have their uses, but there are certain caveats and considerations to be aware of when working with them. 
+
+
+Labs on GLS and Synthesis-Simulation Mismatch:
+
+
+
+
+
+ternary_operator_mux
+
+
+
+gvim teranry_operator_mux.v
+
+Simulation
+
+iverilog ternary_operator_mux.v tb_ternary_operator_mux.v
+./a.out
+gtkwave tb_ternary_operator_mux.vcd
+
+
+Synthesis
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog ternary_operator_mux.v
+synth -top ternary_operator_mux
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+
+
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/2ebc5275-9b5a-49ff-9f27-89e26cd80d59)
+
+
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/90bdfe6a-621f-4d56-9c7b-49c084760c64)
+
+
+
+
+GLS to Gate-Level Simulation
+
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux_net.v tb_ternary_operator_mux.v
+./a.out
+gtkwave tb_bad_mux.vcd
+
+
+gvim bad_mux.v
+
+
+
+Simualtion
+
+iverilog bad_mux.v tb_bad_mux.v
+./a.out
+gtkwave tb_bad_mux.vcd
+
+
+Synthesis
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog bad_mux.v
+synth -top bad_mux
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/b8e74627-13a8-4499-8372-29225bd4fca4)
+
+
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/7d7a9304-180e-408c-b2f5-efedf2a1839e)
+
+GLS to Gate-Level Simulation
+
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v bad_mux_net.v tb_bad_mux.v
+./a.out
+gtkwave tb_bad_mux.vcd
+
+
+
+Labs on Synth-Sim Mismatch for Blocking Statement:
+
+blocking_caveat
+
+
+
+gvim blocking_caveat.v
+
+Simualtion
+
+iverilog blocking_caveat.v tb_blocking_caveat.v
+./a.out
+gtkwave tb_blocking_caveat.vcd
+
+
+Synthesis
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog blocking_caveat.v
+synth -top blocking_caveat
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+
+
+
+
+GLS to Gate-Level Simulation
+
+
+
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v blocking_caveat_net.v tb_blocking_caveat.v
+./a.out
+gtkwave tb_blocking_caveat.vcd
+
+
+ 
+
+
+
+
+
+
+
 
 
 
