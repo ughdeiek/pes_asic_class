@@ -166,7 +166,20 @@ LAB 2 :
 
 
 
-![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/2652903b-9823-4c1e-a7eb-f98d9e4e3bcf)
+![Screenshot from 2023-09-07 23-09-13](https://github.com/ughdeiek/pes_asic_class/assets/142580251/6afbc915-2ed4-40ff-8104-8c12ad6ff1f9)
+
+
+
+
+
+
+Lab to Run C-Program on RICV-CPU :
+
+![Screenshot from 2023-09-07 23-15-09](https://github.com/ughdeiek/pes_asic_class/assets/142580251/6968e34e-c53f-4c85-8498-6d121a75f392)
+
+
+![Screenshot from 2023-09-07 23-15-22](https://github.com/ughdeiek/pes_asic_class/assets/142580251/43c1c1b4-0525-4eb5-808a-2fe2457ad0ac)
+
 
 
 
