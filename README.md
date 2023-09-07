@@ -545,13 +545,113 @@ Some more optimizations:
     DAY -5 
 
     LAB-5:
+
+    Introduction to OptimisationS:
+
+    Combinational Logic Optimisations
+opt_check
+
+    gvim opt_check.v
+
+    ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/f7d17297-467a-450f-b600-fc058a487cbb)
+
     
 
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+read_verilog opt_check.v
+
+synth -top opt_check
+
+opt_clean -purge
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+show
+
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/ebd6a1e3-21db-4976-bbef-956acf018e2d)
+
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/a9c66c75-9b3f-4534-87ef-a00588e21944)
+
+ opt_check2
+
+    gvim opt_check2.v
+
+    ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/e4a6bd10-4ccf-4874-8020-612f24fe49e4)
+
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+read_verilog opt_check2.v
+
+synth -top opt_check2
+
+opt_clean -purge
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+show
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/a85db574-7c23-440e-8371-be22de5e32b1)
+
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/ab32a822-2d13-44b1-95e1-27152a6423ac)
+
+
+    gvim opt_check3.v
+
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/357c9863-9818-473d-9e92-39b09207dead)
+
+
+    read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    read_verilog opt_check3.v
+    synth -top opt_check3
+    opt_clean -purge
+    abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    show
+
+    ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/b5d0bcc2-3a71-4d98-a81d-932dff70c641)
+
+    ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/c0363c73-4784-4b92-9a63-9a231290c143)
 
 
 
+    gvim opt_check4.v
+
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/7fd34916-22ff-4669-8e7d-96709ba66e70)
+
+    read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    read_verilog opt_check4.v
+    synth -top opt_check4
+    opt_clean -purge
+    abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    show
+
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/89ffca85-2505-40e4-b179-1b8da3961031)
+
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/8d45e90b-bfd9-4b7a-8bf2-65423de9dcc8)
 
 
+ multiple_module_opt
+
+    gvim multiple_module_opt.v
+
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/b4e667cd-8454-4bed-9ea7-40085238ceb7)
+
+
+    read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    read_verilog multiple_module_opt.v
+    synth -top multiple_module_opt
+    opt_clean -purge
+    abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    show
+
+    ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/768fcdad-6ac9-406b-8cef-1155468a3733)
+
+    ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/e0c6edb5-6a37-485f-9eeb-5bb49336dca4)
+
+
+    Sequential Logic Optimisations:
+
+    
 
 
 
