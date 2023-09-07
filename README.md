@@ -324,6 +324,228 @@ v) after switching, the extra info is dumped out hence we obtain:
 ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/95daa6fd-8855-4699-ae7d-d884c878a3c6)
 
 
+
+LAB -4 :
+
+Introduction to Timing Dot Libs:
+
+
+
+    The first line in the file library ("sky130_fd_sc_hd__tt_025C_1v80") :
+    
+        tt : indicates variations due to process and here it indicates Typical Process.
+	
+        025C : indicates the variations due to temperatures where the silicon will be used.
+	
+        1v80 : indicates the variations due to the voltage levels where the silicon will be incorporated.
+
+
+ ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/2ecac063-6427-49c5-96b1-3e05a7738a0b)
+
+ Hierarchical vs Flat Synthesis:
+ 
+
+Hierarchical Synthesis Hierarchical synthesis is an approach in digital design and logic synthesis where complex designs are broken down into smaller, more manageable modules or sub-circuits, and each module is synthesized individually. These synthesized modules are then integrated back into the overall design hierarchy. This approach helps manage the complexity of large designs and allows designers to work on different parts of the design independently.
+
+
+![Screenshot from 2023-08-30 23-04-51](https://github.com/ughdeiek/pes_asic_class/assets/142580251/de8506f0-c6d8-4133-9842-ce2eb436982e)
+
+
+
+
+    multiple_modules instantiates sub_module1 and sub_module2
+
+    Launch yosys
+
+    read the library file read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+    read the verilog file  read_verilog multiple_modules.v
+
+    synth -top multiple_modules to set it as top module
+
+![Screenshot from 2023-08-30 23-04-51](https://github.com/ughdeiek/pes_asic_class/assets/142580251/13524cd2-fcdb-4f54-878a-669c322ce35a)
+
+![Screenshot from 2023-08-30 23-37-43](https://github.com/ughdeiek/pes_asic_class/assets/142580251/0da09c02-ce9b-48dc-a301-bba9cf86403e)
+
+![Screenshot from 2023-08-31 00-05-43](https://github.com/ughdeiek/pes_asic_class/assets/142580251/7b1d77e6-f2e7-4684-a4d5-442fcbc257a4)
+
+
+
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+To view the netlist show multiple_modules
+
+![Screenshot from 2023-08-30 23-39-13](https://github.com/ughdeiek/pes_asic_class/assets/142580251/4d79be56-e4e7-4753-8518-397dd3fd46e3)
+
+
+
+    Here it shows sub_module1 and sub_module2 instead of AND gate and OR gate.
+
+    write_verilog -noattr multiple_modules_hier.v
+    !gvim multiple_modules_hier.v
+
+    
+    ![Screenshot from 2023-08-30 23-52-22](https://github.com/ughdeiek/pes_asic_class/assets/142580251/cf6abf7a-79a0-414b-9f55-5a6f32ff2a03)
+
+    ![Screenshot from 2023-08-31 00-06-50](https://github.com/ughdeiek/pes_asic_class/assets/142580251/b639970e-0037-4233-a536-1e0249587605)
+
+    
+Flattened Synthesis Flattened synthesis is the opposite of hierarchical synthesis. Instead of maintaining the hierarchical structure of the design during synthesis, flattened synthesis combines all modules and sub-modules into a single, flat representation. This means that the entire design is synthesized as a single unit, without preserving the modular organization present in the original high-level description.
+
+    Launch yosys
+    read the library file read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    read the verilog file  read_verilog multiple_modules.v
+    synth -top multiple_modules to set it as top module
+    abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    flatten to write out a flattened netlist
+    show
+
+    
+    write_verilog -noattr multiple_modules_flat.v
+    !gvim multiple_modules_flat.v
+
+
+![Screenshot from 2023-08-30 23-58-14](https://github.com/ughdeiek/pes_asic_class/assets/142580251/e9e2d16e-30f7-4d97-a678-243724c0e689)
+
+
+
+Various Flop Coding Styles and Optimization:
+
+
+    A flip-flop (often abbreviated as "flop") is a fundamental building block in digital circuit design.
+    It's a type of sequential logic element that stores binary information (0 or 1) and can change its output based on clock signals and input values.
+    In a combinational circuit, the output changes after the propagation delay of the circuit once inputs are changed.
+    During the propagation of data, if there are different paths with different propagation delays, then a glitch might occur.
+    There will be multiple glitches for multiple combinational circuits.
+    Hence, we need flops to store the data from the combinational circuits.
+    When a flop is used, the output of combinational circuit is stored in it and it is propagated only at the posedge or negedge of the clock so that the next combinational circuit gets a glitch free input thereby stabilising the output.
+    We use control pins like set and reset to initialise the flops.
+    They can be synchronous and asynchronous.
+
+D Flip-Flop with Asynchronous Reset
+
+    When the reset is high, the output of the flip-flop is forced to 0, irrespective of the clock signal.
+    Else, on the positive edge of the clock, the stored value is updated at the output.
+
+
+    
+    cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+    iverilog dff_async_set.v tb_dff_async_set.v
+    ./a.out
+    gtkwave tb_dff_async_set.vcd
+
+
+
+    Synthesis
+        cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+        yosys
+        read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+        read_verilog dff_async_set.v
+        synth -top dff_async_set
+        dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+        abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+        show
+
+
+![Screenshot from 2023-09-03 15-43-35](https://github.com/ughdeiek/pes_asic_class/assets/142580251/8366c764-4615-4321-8507-6e6f78a4bfe3)
+
+
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/f0c37a52-d69c-4fd7-93f9-b7a96d65a5f7)
+
+![Screenshot from 2023-09-03 15-22-45](https://github.com/ughdeiek/pes_asic_class/assets/142580251/e020dffe-e2d0-45ad-bd31-27c6fca7cb3c)
+
+![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/fd6bb63d-4ce1-4d9c-90a1-00c16c52ea3e)
+
+
+
+D Flip-Flop with Synchronous Reset
+
+    Simulation
+        cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+        iverilog dff_syncres.v tb_dff_syncres.v
+        ./a.out
+        gtkwave tb_dff_syncres.vcd
+
+![Screenshot from 2023-09-03 15-32-00](https://github.com/ughdeiek/pes_asic_class/assets/142580251/2b6db40c-6596-43af-b351-e972bfa4cb47)
+
+
+
+
+Synthesis
+
+    cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+    yosys
+    read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    read_verilog dff_syncres.v
+    synth -top dff_syncres
+    dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+    abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    show
+
+    ![image](https://github.com/ughdeiek/pes_asic_class/assets/142580251/4ae2fd7d-ea63-432b-825d-c4b0f02ce5b7)
+
+Some more optimizations: 
+
+
+    gvim mult_2.v
+
+image
+
+    read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    read_verilog mult_2.v
+    synth -top mul2
+
+image
+
+    abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    show
+
+image
+
+    write_verilog -noattr mul2_netlist.v
+    !gvim mul2_netlist.v
+
+image
+
+
+
+    gvim mult_8.v
+    image
+
+    read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
+
+    read_verilog mult_8.v
+
+    synth -top mult8
+
+image
+
+    abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    show
+
+image
+
+
+    write_verilog -noattr mult8_netlist.v
+    !gvim mult8_netlist.v
+
+image
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 
 
